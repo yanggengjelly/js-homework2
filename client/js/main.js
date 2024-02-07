@@ -1,4 +1,10 @@
-
+import {
+  getNode,
+  getNodes,
+  insertLast,
+  clearContents,
+  refError,
+} from "../lib/index.js";
 /* 
 
 1. 클릭 이벤트 활성화
@@ -8,17 +14,3 @@
 5. 함수 분리
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
