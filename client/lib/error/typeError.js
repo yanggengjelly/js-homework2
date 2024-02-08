@@ -1,3 +1,3 @@
-export function refError(message) {
+export function typefError(message) {
   throw new ReferenceError(message);
 }
