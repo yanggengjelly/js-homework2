@@ -56,7 +56,6 @@ function setModify(index) {
   attr(posteCover, "src", `./assets/${dataName[index - 1].toLowerCase()}.jpeg`);
   attr(posteCover, "alt", data[index - 1].alt);
   attr(nickName, `${dataName[index - 1]}`);
-  nickName.innerText = dataName[index - 1];
   setCss(
     document.body,
     "background",
