@@ -33,10 +33,10 @@ const data = [
 
 */
 
-const navigator = getNode(".nav");
-const ul = getNode("ul");
-const posteCover = getNode(".visual div img");
-const nickName = getNode(".nickName");
+const $navigator = getNode(".nav");
+const $ul = getNode("ul");
+const $posteCover = getNode(".visual div img");
+const $nickName = getNode(".nickName");
 
 function handleSlide(e) {
   e.preventDefault();
@@ -44,7 +44,7 @@ function handleSlide(e) {
   const button = e.target.closest("button");
   if (!target | !button) return;
   const index = target.dataset.index;
-  const list = [...ul.children];
+  const list = [...$ul.children];
   setModify(index);
   list.forEach((li) => removeClass(li, "is-active"));
   addClass(target, "is-active");
@@ -53,9 +53,13 @@ function handleSlide(e) {
 function setModify(index) {
   const dataName = data.map((item) => item.name);
   const dataColor = data.map((item) => item.color);
-  attr(posteCover, "src", `./assets/${dataName[index - 1].toLowerCase()}.jpeg`);
-  attr(posteCover, "alt", data[index - 1].alt);
-  attr(nickName, `${dataName[index - 1]}`);
+  attr(
+    $posteCover,
+    "src",
+    `./assets/${dataName[index - 1].toLowerCase()}.jpeg`
+  );
+  attr($posteCover, "alt", data[index - 1].alt);
+  $nickName.innerText = dataName[index - 1];
   setCss(
     document.body,
     "background",
@@ -63,4 +67,4 @@ function setModify(index) {
   );
 }
 
-navigator.addEventListener("click", handleSlide);
+$navigator.addEventListener("click", handleSlide);
